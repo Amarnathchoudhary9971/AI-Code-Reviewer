@@ -1,0 +1,106 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+  font-family: 'Fira Code', monospace;
+  background-color: #1e1e1e;
+  color: #ffffff;
+}
+
+main {
+  height: 100%;
+  width: 100%;
+  padding: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  transition: all 0.3s ease-in-out;
+}
+
+main .left,
+main .right {
+  height: 100%;
+  flex-basis: 50%;
+  border-radius: 0.7rem;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Zoom effect on hover */
+main .left:hover,
+main .right:hover {
+  transform: scale(1.01);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+}
+
+main .left {
+  background-color: #000000;
+  position: relative;
+}
+
+.left .code,
+.code pre,
+.code pre code {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  border-radius: 0.7rem;
+  background-color: #0c0c0c;
+  color: #e0e0e0;
+  padding: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+/* Focus effect for editor */
+.left .code:focus-within {
+  background-color: #121212;
+}
+
+/* Review button */
+main .left .review {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  background-color: rgb(219, 219, 255);
+  color: #000000;
+  padding: 0.6rem 2.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  user-select: none;
+  border-radius: 0.7rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+main .left .review:hover {
+  background-color: rgb(170, 170, 255);
+  transform: scale(1.05);
+}
+
+main .right {
+  background-color: #282c34;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  overflow-y: auto;
+  color: #ffffff;
+}
+
+/* Style markdown output (optional) */
+main .right h1,
+main .right h2,
+main .right h3 {
+  color: #ffcb6b;
+  margin-bottom: 0.5rem;
+}
+
+main .right p {
+  margin-bottom: 1rem;
+}
